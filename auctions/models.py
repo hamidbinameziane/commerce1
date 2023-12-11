@@ -6,11 +6,11 @@ class User(AbstractUser):
     pass
 
 class listing(models.Model):
-    product_image: models.ImageField()
-    product_name: models.CharField()
-    starting_bid: models.DecimalField(max_digits=10, decimal_places=2)
-    description: models.CharField()
-    date_created: models.BinaryField()
+    product_image = models.ImageField(upload_to='static/auctions/images')
+    product_name = models.CharField()
+    starting_bid = models.DecimalField(max_digits=10, decimal_places=2)
+    description = models.CharField()
+    date_created = models.BinaryField()
     seller = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class bid(models.Model):
